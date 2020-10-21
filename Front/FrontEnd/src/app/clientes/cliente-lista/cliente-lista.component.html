@@ -1,0 +1,21 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Saldo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of items">
+      <th>{{ cliente.id }}</th>
+      <td>{{ cliente.userName }}</td>
+      <td>{{ cliente.saldo.saldoAtual }}</td>
+      <td>
+          <a [routerLink]="['detalhes/'+cliente.id]" >Detalhes</a> | 
+          <a [routerLink]="[]" (click)="delete(cliente.id)">Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

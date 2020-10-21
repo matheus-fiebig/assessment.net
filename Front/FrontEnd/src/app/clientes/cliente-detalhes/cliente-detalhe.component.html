@@ -1,0 +1,56 @@
+<div *ngIf="isLoad">
+    <h5>Cliente</h5>
+    <hr>
+    <div class="form-row">
+        <label class="col" for="name"><b>#{{cliente[0].id}}</b></label>
+    </div>
+    <form [formGroup]="clienteForm" (submit)="salvar()">
+    <div class="form-row">
+        <div class="col">
+            <label for="name">Username</label>
+            <input type="text" formControlName="userName" placeholder="{{cliente[0].userName}}" class="form-control">
+        </div>
+        <div class="col">
+            <label for="name">Email</label>
+            <input type="text" formControlName="email" placeholder="{{cliente[0].email}}" class="form-control">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <label for="name">Current Password</label>
+            <input type="password" formControlName="cpassword"  class="form-control">
+        </div>
+        <div class="col">
+            <label for="name">New Password</label>
+            <input type="password" formControlName="npassword" class="form-control">
+        </div>
+    </div>
+    <br>
+    
+    <h5>Saldo : R${{cliente[0].saldo.saldoAtual}}</h5>
+
+        <hr>
+        <div class="form-row">
+            <div class="col">
+                <label for="name">Saldo</label>
+                <input type="text" formControlName="saldo" class="form-control">
+            </div>
+            <div class="col">
+                <label for="adicionar">Adicionar</label>
+                <input type="radio" (click)="funcao = 1" class="form-control" name="funcao" checked>
+            </div>
+            <div class="col">
+                <label for="retirar">Retirar</label>
+                <input type="radio" (click)="funcao = -1" name="funcao" class="form-control">
+            </div>
+        </div>
+        <br>
+        
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-block btn-success">Salvar Dados</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
